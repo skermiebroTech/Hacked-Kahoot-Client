@@ -13,15 +13,13 @@
     <meta name="owner" content="Kahoot">
     <meta name="summary" content="Kahoot">
     <link rel="stylesheet" href="/index.css">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5S0LGKYC6M"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-5S0LGKYC6M');
-    </script>
-    <!-- End Global site tag (gtag.js) - Google Analytics -->
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MD9VSQ8');</script>
+<!-- End Google Tag Manager -->
     <script async src="https://apis.google.com/js/platform.js"></script>
   </head>
   <body class="rainbow">
@@ -33,69 +31,9 @@
         text-align: center;
       }
     </style>
-    <script>
-    const urls = [
-      "https://kahoot-win.herokuapp.com",
-      "https://kahoot-win.herokuapp.com/quiz/",
-      "https://kahoot-win.herokuapp.com/creator/",
-      "https://kahoot-win.herokuapp.com/how-it-works/",
-      "https://kahoot-win.herokuapp.com/api/",
-      "https://kahoot-win.herokuapp.com/privacy/",
-      "https://kahoot-win.herokuapp.com/terms/",
-      "https://kahoot-win.herokuapp.com/cookie%20policy/",
-      "https://kahoot-win.herokuapp.com/brew-me-a-coffee",
-      "https://kahoot-win.herokuapp.com/blog/"
-      "https://kahoot-win.herokuapp.com/blog/welcome",
-      "https://kahoot-win.herokuapp.com/blog/about",
-      "https://kahoot-win.herokuapp.com/blog/kahoot-is-not-a-testing-tool",
-      "https://kahoot-win.herokuapp.com/blog/quiz-not-found",
-      "https://kahoot-win.herokuapp.com/blog/download"
-    ];
-    function similarity(s1, s2) {
-      var longer = s1;
-      var shorter = s2;
-      if (s1.length < s2.length) {
-        longer = s2;
-        shorter = s1;
-      }
-      var longerLength = longer.length;
-      if (longerLength == 0) {
-        return 1.0;
-      }
-      return (longerLength - editDistance(longer, shorter)) / parseFloat(longerLength);
-    }
-    function editDistance(s1, s2) {
-      s1 = s1.toLowerCase();
-      s2 = s2.toLowerCase();
-
-      var costs = new Array();
-      for (var i = 0; i <= s1.length; i++) {
-        var lastValue = i;
-        for (var j = 0; j <= s2.length; j++) {
-          if (i == 0)
-          costs[j] = j;
-          else {
-            if (j > 0) {
-              var newValue = costs[j - 1];
-              if (s1.charAt(i - 1) != s2.charAt(j - 1))
-              newValue = Math.min(Math.min(newValue, lastValue),
-              costs[j]) + 1;
-              costs[j - 1] = lastValue;
-              lastValue = newValue;
-            }
-          }
-        }
-        if (i > 0)
-        costs[s2.length] = lastValue;
-      }
-      return costs[s2.length];
-    }
-    const a = urls.sort((a,b)=>{
-      return similarity(location.href,b) - similarity(location.href,a);
-    });
-    const r = document.getElementById("redir");
-    r.href = a[0];
-    r.innerHTML = a[0];
-    </script>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD9VSQ8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
   </body>
 </html>
